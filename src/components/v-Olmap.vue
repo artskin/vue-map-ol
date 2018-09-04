@@ -1,5 +1,5 @@
 <style scoped>
-.v-ol-map{position: relative;width: 1000px;height: 700px;}
+.v-ol-map{position: relative;width: 800px;height: 600px;}
 #tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 10px;}
 #tools .el-radio-group{border-radius: 5px;background: rgba(255, 255, 255, .3);padding: 3px;}
 .volmap{border: 1px dashed #ccc;background: #07263b}
@@ -47,7 +47,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 //加载静态资源
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
-import cameraSrc from '../assets/img/camera2@2x.svg?v=1'
+import cameraSrc from '../assets/img/camera2@2x.svg?v=2'
 var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=10'
 
 var store = require('store');
@@ -151,7 +151,6 @@ export default {
       });
     },
     cleanDrawAction(){
-      console.log(this.map.draw)
       this.mapData.drawType = "null";
       this.map.removeInteraction(this.map.draw);
       this.map.removeInteraction(this.map.snap);
@@ -184,7 +183,7 @@ export default {
             opacity: 1,
             rotation:0,
             rotateWithView:true,
-            scale:0.15,
+            scale:0.3,
             fill:"#14fb24",
             color:"#14fb24",
             src: cameraSrc,

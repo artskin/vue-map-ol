@@ -1,7 +1,7 @@
 <style scoped>
-.v-ol-map{position: relative;width: 800px;height: 400px;}
+.v-ol-map{position: relative;width: 1000px;height: 800px;}
 #tools{position: absolute;right: 0;top: 0;z-index: 99;background: rgba(255, 255, 255, .3);padding: 10px;}
-.volmap{border: 1px dashed #ccc;}
+.volmap{border: 1px dashed #ccc;background: #07263b}
 .volmap canvas{background: hotpink;}
 </style>
 
@@ -45,7 +45,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 
 //加载静态资源
 import '../assets/style/ol/ol.css'
-import bgImgSrc from '../assets/img/floor_map2.jpg'
+import bgImgSrc from '../assets/img/floor1.png'
 import cameraSrc from '../assets/img/camera@2x.svg'
 import data_geoJson from '../assets/data/drawJson.json'
 
@@ -69,7 +69,7 @@ export default {
     }
   },
   mounted () {
-    this.mapData.extent = [0, 0, 1400, 1288];
+    this.mapData.extent = [0, 0, 1920, 1080];
     this.mapData.projection = new Projection({
       code: 'xkcd-image',
       units: 'pixels',

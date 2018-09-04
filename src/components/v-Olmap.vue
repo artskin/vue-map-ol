@@ -48,7 +48,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
 import cameraSrc from '../assets/img/camera@2x.svg'
-var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=7'
+var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=9'
 
 var store = require('store');
 

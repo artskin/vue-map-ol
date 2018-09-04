@@ -1,0 +1,71 @@
+{
+        "type": "FeatureCollection",
+        "name": "Magnitude 5",
+        "crs": {
+          "type": "name",
+          "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+          }
+        },
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "Name": "",
+              "description": null
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                480.611,679.4531250000001
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "Name": "",
+              "description": null
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                911.875,424.4531250000001
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "Name": "",
+              "description": null
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                889.375,829.4531250000001
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [457.5,475.0781250000001]
+            },
+            "properties": {
+              "prop0": "value04"
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [896.25,583.8281250000001]
+            },
+            "properties": {
+              "prop0": "value05"
+            }
+          }
+        ]
+      }

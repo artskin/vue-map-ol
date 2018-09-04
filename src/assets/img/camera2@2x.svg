@@ -3,19 +3,11 @@
 <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#00FF33;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#00FF33;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;}
 	.st1{fill:#00FF33;}
 </style>
-<g>
-	<g id="XMLID_1_">
-		<g>
-		</g>
-		<g>
-			<polyline class="st0" points="284.6,59.8 144.6,103.1 284.6,146.4 			"/>
-		</g>
-	</g>
-	<path class="st1" d="M128.5,143.7c0,5.2-4,9.4-9,9.4H23.3c-5,0-9-4.2-9-9.4V62.4c0-5.2,4-9.4,9-9.4h96.2c5,0,9,4.2,9,9.4V143.7
-		L128.5,143.7z M168.9,61.5l-26.1,16.9v49.4l25.9,16.7c0.3,0.2,1.8,1.4,4.1,1.4c3.1,0,5.7-2.7,5.7-6.1V66.3c0-3.3-2.5-6.1-5.7-6.1
-		C170.5,60.2,169,61.4,168.9,61.5L168.9,61.5z"/>
-</g>
+<polyline class="st0" points="284.6,59.7 144.6,103.1 284.6,146.4 "/>
+<path class="st1" d="M128.5,143.7c0,5.2-4,9.4-9,9.4H23.3c-5,0-9-4.2-9-9.4V62.4c0-5.2,4-9.4,9-9.4h96.2c5,0,9,4.2,9,9.4V143.7
+	L128.5,143.7z M168.9,61.5l-26.1,16.9v49.4l25.9,16.7c0.3,0.2,1.8,1.4,4.1,1.4c3.1,0,5.7-2.7,5.7-6.1V66.3c0-3.3-2.5-6.1-5.7-6.1
+	C170.5,60.2,169,61.4,168.9,61.5L168.9,61.5z"/>
 </svg>

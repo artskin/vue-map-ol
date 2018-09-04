@@ -1,6 +1,6 @@
 <style scoped>
 .v-ol-map{position: relative;width: 1000px;height: 700px;}
-#tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 5px;}
+#tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 10px;}
 #tools .el-radio-group{border-radius: 5px;background: rgba(255, 255, 255, .3);padding: 3px;}
 .volmap{border: 1px dashed #ccc;background: #07263b}
 .volmap canvas{background: hotpink;}
@@ -9,7 +9,7 @@
 <template>
   <div class="v-ol-map">
     <div id="tools">
-      <el-radio-group v-model="mapData.drawType" size="small" @change="change(mapData.drawType)">
+      <el-radio-group v-model="mapData.drawType" size="mini" @change="change(mapData.drawType)">
         <el-radio-button label="Polygon"><i class="el-icon-edit"></i></el-radio-button>
         <el-radio-button label="Point"><i class="el-icon-location-outline"></i></el-radio-button>
         <el-radio-button label="Circle" disabled><i class="el-icon-refresh"></i></el-radio-button>
@@ -191,10 +191,10 @@ export default {
           })),
           stroke: new Stroke({
             width: 1,
-            color: [255, 0, 0, 1]
+            color: [114, 182, 61, .8]
           }),
           fill: new Fill({
-            color: [0, 0, 255, 0.3]
+            color: [30, 138, 112, 0.3]
           })
         })
       }))

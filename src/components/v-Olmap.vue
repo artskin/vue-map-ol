@@ -45,7 +45,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 
 //加载静态资源
 import '../assets/style/ol/ol.css'
-import bgImgSrc from '../assets/img/floor1.png'
+import bgImgSrc from '../assets/img/floor2.png'
 import cameraSrc from '../assets/img/camera@2x.svg'
 import data_geoJson from '../assets/data/drawJson.json'
 
@@ -171,7 +171,7 @@ export default {
 
       ArrLayer.push(new VectorLayer({
         source:new VectorSource({
-          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=2',//读取图形数据
+          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=3',//读取图形数据
           format: new GeoJSON(),
           wrapX: false
         }),

@@ -171,7 +171,7 @@ export default {
 
       ArrLayer.push(new VectorLayer({
         source:new VectorSource({
-          url: 'https://raw.githubusercontent.com/artskin/map_ol/master/src/assets/data/geoJson.json',//读取图形数据
+          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json',//读取图形数据
           format: new GeoJSON(),
           wrapX: false
         }),

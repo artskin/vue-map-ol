@@ -5,20 +5,50 @@
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [401.95312500000006,735.2905273437501]
+				"coordinates": [500.625,679.4531250000001]
 			},
 			"properties": {
-				"prop0": "value0"
+				"cID": "value01"
 			}
 		},
 		{
 			"type": "Feature",
 			"geometry": {
 				"type": "Point",
-				"coordinates": [1201.95312500000006,735.2905273437501]
+				"coordinates": [931.875,424.4531250000001]
 			},
 			"properties": {
-				"prop0": "value0"
+				"cID": "value02"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [1089.375,829.4531250000001]
+			},
+			"properties": {
+				"prop0": "value03"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [457.5,475.0781250000001]
+			},
+			"properties": {
+				"prop0": "value04"
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [896.25,583.8281250000001]
+			},
+			"properties": {
+				"prop0": "value05"
 			}
 		},
 		{

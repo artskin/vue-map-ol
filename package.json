@@ -9,12 +9,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "cgil-vue-olmap": "^1.0.17",
     "element-ui": "^2.4.6",
     "ol": "^5.2.0",
     "sass-loader": "^7.1.0",
     "store": "^2.0.12",
-    "vem": "0.0.2",
     "vue": "^2.5.17",
     "vue-openlayers": "^0.5.6",
     "vue-router": "^3.0.1",

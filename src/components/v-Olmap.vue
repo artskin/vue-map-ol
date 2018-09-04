@@ -47,8 +47,8 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 //加载静态资源
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
-import cameraSrc from '../assets/img/camera@2x.svg'
-var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=9'
+import cameraSrc from '../assets/img/camera2@2x.svg?v=1'
+var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=10'
 
 var store = require('store');
 
@@ -182,9 +182,11 @@ export default {
             anchorXUnits: 'fraction',
             anchorYUnits: 'pixels',
             opacity: 1,
-            rotation:-90,
+            rotation:0,
             rotateWithView:true,
-            scale:0.2,
+            scale:0.15,
+            fill:"#14fb24",
+            color:"#14fb24",
             src: cameraSrc,
           })),
           stroke: new Stroke({

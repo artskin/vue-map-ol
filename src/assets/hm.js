@@ -7,10 +7,13 @@
       
 
       //// url to fetch geojson data
-      var urlData = "https://raw.githubusercontent.com/iorilan/vue-map-ol/lanliang/src/assets/data/hm-test.json";
+      var urlData = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test.json";
+
       //// TODO may need to calculate based on the # of ppl
       var blurV = 50;
       var radiusV = 35;
+      //// refresh data
+
 
       var vectorSource = new VectorSource({
         url: urlData,

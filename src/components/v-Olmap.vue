@@ -1,6 +1,7 @@
 <style scoped>
 .v-ol-map{position: relative;width: 1000px;height: 700px;}
-#tools{position: absolute;right: 0;top: 0;z-index: 99;background: rgba(255, 255, 255, .3);padding: 10px;}
+#tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 5px;}
+#tools .el-radio-group{border-radius: 5px;background: rgba(255, 255, 255, .3);padding: 3px;}
 .volmap{border: 1px dashed #ccc;background: #07263b}
 .volmap canvas{background: hotpink;}
 </style>
@@ -47,7 +48,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
 import cameraSrc from '../assets/img/camera@2x.svg'
-var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=6'
+var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=7'
 
 var store = require('store');
 

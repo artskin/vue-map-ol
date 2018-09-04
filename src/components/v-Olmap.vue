@@ -1,5 +1,5 @@
 <style scoped>
-.v-ol-map{position: relative;width: 1000px;height: 800px;}
+.v-ol-map{position: relative;width: 1000px;height: 700px;}
 #tools{position: absolute;right: 0;top: 0;z-index: 99;background: rgba(255, 255, 255, .3);padding: 10px;}
 .volmap{border: 1px dashed #ccc;background: #07263b}
 .volmap canvas{background: hotpink;}
@@ -171,7 +171,7 @@ export default {
 
       ArrLayer.push(new VectorLayer({
         source:new VectorSource({
-          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json',//读取图形数据
+          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=1',//读取图形数据
           format: new GeoJSON(),
           wrapX: false
         }),

@@ -47,7 +47,7 @@ import MultiPolygon from 'ol/geom/MultiPolygon'
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
 import cameraSrc from '../assets/img/camera@2x.svg'
-import data_geoJson from '../assets/data/drawJson.json'
+var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=6'
 
 var store = require('store');
 
@@ -109,7 +109,7 @@ export default {
     select.on('select', function(e) {
       
       if(e.selected.length > 0){
-        console.log(e.selected[0].values_.prop0)
+        console.log(e.selected[0].values_.gID)
       }
     });
   },
@@ -171,7 +171,7 @@ export default {
 
       ArrLayer.push(new VectorLayer({
         source:new VectorSource({
-          url: 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=3',//读取图形数据
+          url: data_geoJson,//读取图形数据
           format: new GeoJSON(),
           wrapX: false
         }),

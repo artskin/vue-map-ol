@@ -9,6 +9,7 @@ import {Icon, Stroke, Style} from 'ol/style.js';
 var urlData = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/line-arrow-test.json";
 var vectorSource = new VectorSource({
     url: urlData,
+    projection: 'EPSG:3857',
     format: new GeoJSON(),
     wrapX: false
   });
@@ -25,7 +26,11 @@ var styleFunction = function(feature) {
     })
   ];
 
-  geometry.forEachSegment(function(start, end) {
+  var coords = geometry.getCoordinates();// Gets all the coordinates
+      var start = coords[0];//First Coordinate
+      var end = coords[1];//Second Coordinate
+
+    // Rest of the code
     var dx = end[0] - start[0];
     var dy = end[1] - start[1];
     var rotation = Math.atan2(dy, dx);
@@ -33,13 +38,12 @@ var styleFunction = function(feature) {
     styles.push(new Style({
       geometry: new Point(end),
       image: new Icon({
-        src: 'data/arrow.png',
+        src: '../assets/data/arrow.png',
         anchor: [0.75, 0.5],
         rotateWithView: true,
         rotation: -rotation
       })
     }));
-  });
 
   return styles;
 };

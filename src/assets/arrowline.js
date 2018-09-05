@@ -1,57 +1,113 @@
 import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import Point from 'ol/geom/Point.js';
-import GeoJSON from 'ol/format/GeoJSON.js';
-import { Vector as VectorLayer} from 'ol/layer.js';
-import {Vector as VectorSource} from 'ol/source.js';
-import {Icon, Stroke, Style} from 'ol/style.js';
+import Draw from 'ol/interaction/Draw.js';
+import Feature from 'ol/Feature.js';
+import LineString from 'ol/geom/LineString.js';
+import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
+import {OSM, Vector as VectorSource, Cluster} from 'ol/source.js';
+import {Icon, Stroke, Style, Circle, Fill, Text} from 'ol/style.js';
 
-var urlData = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/line-arrow-test.json";
-var vectorSource = new VectorSource({
-    url: urlData,
-    projection: 'EPSG:3857',
-    format: new GeoJSON(),
-    wrapX: false
-  });
+import arrowPng from '../assets/img/arrow.png'
 
-var styleFunction = function(feature) {
-  var geometry = feature.getGeometry();
-  var styles = [
-    // linestring
-    new Style({
-      stroke: new Stroke({
-        color: '#ffcc33',
-        width: 2
-      })
-    })
-  ];
+////TODO to get from api service
+var coordinates = [
+  [550.625,679.4531250000001],
+  [901.875,404.4531250000001],
+  [1139.375,829.4531250000001],
+  [836.25,633.8281250000001]
+];
 
-  var coords = geometry.getCoordinates();// Gets all the coordinates
-      var start = coords[0];//First Coordinate
-      var end = coords[1];//Second Coordinate
 
-    // Rest of the code
-    var dx = end[0] - start[0];
-    var dy = end[1] - start[1];
-    var rotation = Math.atan2(dy, dx);
-    // arrows
-    styles.push(new Style({
-      geometry: new Point(end),
-      image: new Icon({
-        src: '../assets/data/arrow.png',
-        anchor: [0.75, 0.5],
-        rotateWithView: true,
-        rotation: -rotation
-      })
-    }));
 
-  return styles;
-};
-var vector = new VectorLayer({
-  source: vectorSource,
-  style: styleFunction
+
+////
+var features = new Array();
+for (var i = 0; i < coordinates.length; ++i) {
+  features[i] = new Feature(new Point(coordinates[i]));
+}
+
+var source = new VectorSource({
+  features: features
 });
 
+var clusterSource = new Cluster({
+  distance: 40,
+  source: source
+});
+var styleCache = {};
+var clusterLayer = new VectorLayer({
+    source: clusterSource,
+    style: function (feature, resolution) {
+        var size = feature.get('features').length;
+		console.log("size of feature:"+size);
+        var style = styleCache[size];
+        if (!style) {
+            style = [new Style({
+                image: new Circle({
+                    radius: 10,
+                    stroke: new Stroke({
+                        color: '#fff'
+                    }),
+                    fill: new Fill({
+                        color: '#3399CC'
+                    })
+                }),
+                text: new Text({
+                    text: size.toString(),
+                    fill: new Fill({
+                        color: '#fff'
+                    })
+                })
+            })];
+            styleCache[size] = style;
+        }
+        return style;
+    }
+});
+
+////
+var vectorSource = new VectorSource({});
+for (var i = 1; i < coordinates.length; i++) {
+  var startPoint = coordinates[i-1];
+  var endPoint = coordinates[i];
+  var dx = endPoint[0] - startPoint[0];
+  var dy = endPoint[1] - startPoint[1];
+  var rotation = Math.atan2(dy, dx);
+
+  var lineArray = [startPoint, endPoint];
+  var featureLine = new Feature({
+      geometry: new LineString(lineArray)
+  });
+
+  var lineStyle = new Style({
+      stroke: new Stroke({
+          color: '#ffcc33',
+          width: 2
+      })
+  });
+  featureLine.setStyle(lineStyle);
+  vectorSource.addFeature(featureLine);
+  
+  var iconStyle = new Style({
+      image: new Icon({
+            src: arrowPng,
+            anchor: [0.75, 0.5],
+            rotateWithView: true,
+            rotation: -rotation
+          })
+  });
+  var iconFeature = new Feature({
+      geometry: new Point(endPoint)
+  });
+  iconFeature.setStyle(iconStyle);
+  vectorSource.addFeature(iconFeature);
+}
+var vectorLayer = new VectorLayer({
+  source: vectorSource
+});
+
+
 export default{
-    layers:[vector]
+    layers:[clusterLayer, vectorLayer]
 }

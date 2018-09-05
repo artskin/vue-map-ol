@@ -37,7 +37,7 @@ import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
 import cameraSrc from '../assets/img/camera2@2x.svg?v=1'
 var cameraJson = 'https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test.json';
-console.log("arrow line component 1");
+
 
 export default {
   name: 'arrowLineMap',
@@ -66,8 +66,9 @@ export default {
 
     ////append line arrow on map
     if(al.layers && al.layers.length > 0){
-    for (var i = 0;i < al.layers.length; i++)
-        this.map.addLayer(al.layers[i]);
+      for (var i = 0;i < al.layers.length; i++){
+          this.map.addLayer(al.layers[i]);
+      }
     }
 
   },

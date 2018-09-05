@@ -6,43 +6,43 @@
       import VectorSource from 'ol/source/Vector.js';
       
 
-      //// url to fetch geojson data
+      //// dummy urls to fetch geojson data
       var urlData = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test.json";
-
+      var urlData2 = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test2.json";
+      var urls = [urlData,urlData2];      
       //// const
       var blurV = 50;
       var radiusV = 35;
-      var frequencyInSecond = 10 * 1000;
+      var frequencyInSecond = 7 * 1000;
 
-	console.log("hm 1");
+	    //console.log("hm 1");
       var vectorSource = new VectorSource({
-        url: urlData,
+        url: urlData2,
         format: new GeoJSON(),
         wrapX: false
         //features: (new GeoJSON()).readFeatures(dummyobj)
       });
-console.log("hm 2");
+
+      //console.log("hm 2");
       var vector = new HeatmapLayer({
         source: vectorSource,
         blur: blurV,
         radius: radiusV
       });
-	  console.log("hm 3");
-      ////realtime refresh
-      var req = require('request');
-       var realtimeRefreshData = function(){
-           setTimeout(() => {
-             req(urlData, function (error, response, body) {
-               console.log("response body:");
-               console.log(body);
-               console.log("vector :");
-               console.log(vectorSource);
 
-              
-             realtimeRefreshData();
-             });
-             console.log("refresing");
-           }, frequencyInSecond);
+	  //console.log("hm 3");
+      ////realtime refresh
+       var realtimeRefreshData = function(){
+          setTimeout(() => {
+          var randNum = new Date().getMilliseconds();
+          var index = randNum % 2;
+          vectorSource.clear();
+          vectorSource.url = urls[index];
+          //console.log(vectorSource);
+          console.log("new source url :" + vectorSource.url);
+          realtimeRefreshData();
+          
+          }, frequencyInSecond);
        }
       realtimeRefreshData();
       
@@ -52,7 +52,7 @@ console.log("hm 2");
           layer: 'toner'
         })
       });
-console.log("hm 4");
+//console.log("hm 4");
       
 
       export default{

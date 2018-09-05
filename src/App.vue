@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/home">Home</router-link> |
       <router-link to="/">Vue-Ol-Map</router-link> |
-      <router-link to="/map">map</router-link>
+      <router-link to="/map">map</router-link> |
+      <router-link to="/arrowline">Arrow Line Map</router-link>
     </div>
     <router-view/>
     

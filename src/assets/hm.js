@@ -9,15 +9,17 @@
       //// dummy urls to fetch geojson data
       var urlData = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test.json";
       var urlData2 = "https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test2.json";
-      var urls = [urlData,urlData2];      
+      var urls = [urlData,urlData2];
+      //// to replace above url with api url
+    
       //// const
       var blurV = 50;
       var radiusV = 35;
-      var frequencyInSecond = 7 * 1000;
+      var frequencyInSecond = 10 * 1000;
 
 	    //console.log("hm 1");
       var vectorSource = new VectorSource({
-        url: urlData2,
+        url: urlData,
         format: new GeoJSON(),
         wrapX: false
         //features: (new GeoJSON()).readFeatures(dummyobj)
@@ -33,28 +35,28 @@
 	  //console.log("hm 3");
       ////realtime refresh
        var realtimeRefreshData = function(){
+         var vs;
           setTimeout(() => {
+
+          //// this is local testing logic
           var randNum = new Date().getMilliseconds();
           var index = randNum % 2;
-          vectorSource.clear();
-          vectorSource.url = urls[index];
-          //console.log(vectorSource);
-          console.log("new source url :" + vectorSource.url);
+          
+          vectorSource = null;
+          vectorSource = new VectorSource({
+            url: urls[index],
+            format: new GeoJSON(),
+            wrapX: false
+            //features: (new GeoJSON()).readFeatures(dummyobj)
+          });
+          vector.setSource(vectorSource);
+
           realtimeRefreshData();
           
           }, frequencyInSecond);
        }
       realtimeRefreshData();
-      
-
-      var raster = new TileLayer({
-        source: new Stamen({
-          layer: 'toner'
-        })
-      });
-//console.log("hm 4");
-      
 
       export default{
-        layers:[raster, vector],
+        layers:[vector],
       }

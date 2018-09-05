@@ -1,9 +1,13 @@
-<style scoped>
-.v-ol-map{position: relative;width: 800px;height: 600px;}
-#tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 10px;}
-#tools .el-radio-group{border-radius: 5px;background: rgba(255, 255, 255, .3);padding: 3px;}
-.volmap{border: 1px dashed #ccc;background: #07263b}
-.volmap canvas{background: hotpink;}
+<style>
+  .v-ol-map{position: relative;width: 800px;height: 600px;}
+  #tools{position: absolute;right: 0;top: 0;z-index: 99;padding: 10px;}
+  #tools .el-radio-group{border-radius: 3px;background: rgba(255, 255, 255, .3);padding: 3px;}
+  #tools .el-radio-group:hover{background: rgba(255, 255, 255, .5);}
+  #tools .el-radio-button__inner{background: rgba(0,60,136,0.5);color: #fff;border: 1px solid rgba(21, 120, 248, 0);margin-right: 1px;}
+  #tools .el-radio-button--mini .el-radio-button__inner{padding: 7px 10px;}
+  #tools .is-active .el-radio-button__inner{background: rgba(0,60,136,0.8);border: 1px solid rgba(0,60,136,1)}
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner{box-shadow: none;}
+  .volmap{border: 1px dashed #ccc;background: #07263b}
 </style>
 
 <template>
@@ -12,13 +16,12 @@
       <el-radio-group v-model="mapData.drawType" size="mini" @change="change(mapData.drawType)">
         <el-radio-button label="Polygon"><i class="el-icon-edit"></i></el-radio-button>
         <el-radio-button label="Point"><i class="el-icon-location-outline"></i></el-radio-button>
-        <el-radio-button label="Circle" disabled><i class="el-icon-refresh"></i></el-radio-button>
-        <el-radio-button label="edit"><i class="el-icon-edit-outline"></i></el-radio-button>
+        <el-radio-button label="refresh"><i class="el-icon-refresh"></i></el-radio-button>
         <el-radio-button label="null"><i class="el-icon-rank"></i></el-radio-button>
       </el-radio-group>
     </div>
     <div ref="volmap" class="volmap">
-
+      Loading Map...
     </div>
   </div>
 </template>
@@ -36,7 +39,7 @@ import {getCenter} from 'ol/extent';
 //绘制图形
 import {OSM, Vector as VectorSource} from 'ol/source.js';
 import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import {Circle as CircleStyle, Fill,Icon, Stroke, Style} from 'ol/style';
+import {Circle as CircleStyle,RegularShape , Fill,Icon, Stroke, Style} from 'ol/style';
 import GeoJSON from 'ol/format/GeoJSON';
 
 //draw
@@ -49,25 +52,24 @@ import hm from '../assets/hm.js'
 //加载静态资源
 import '../assets/style/ol/ol.css'
 import bgImgSrc from '../assets/img/floor2.png'
-import cameraSrc from '../assets/img/camera2@2x.svg?v=2'
+//import cameraSrc from '../assets/img/icon_camera3.svg'
+var cameraSrc = 'http://www.williambuck.com/portals/0/Skins/WilliamBuck2014/images/location-icon.svg'
 var data_geoJson = 'https://artskin.github.io/vue-map-ol/src/assets/data/drawJson.json?v=10'
+
 
 var store = require('store');
 
-
-console.log(data_geoJson)
-
 export default {
-  name: 'KdOlMap',
+  name: 'VOlMap',
   data(){
     return{
-      msg:"商场平面图",
       mapData:{
         drawType:'null'
       },
       map:{},
+      isRefresh:true,
       props: {
-        msg2: String
+        //id: +new Date()
       }
     }
   },
@@ -81,7 +83,8 @@ export default {
     //console.log(this.volView())
     this.map = this.volMap(this.$refs.volmap,this.volView())
     this.mapData.source = new VectorSource();
-
+    
+    //添加绘制区域层
     var polygonLayer = new VectorLayer({
       source: this.mapData.source,
       style: new Style({
@@ -102,45 +105,70 @@ export default {
     })
     this.map.addLayer(polygonLayer);
 
-	
-	
     //修改
-    var modify = new Modify({source: this.mapData.source});
-    this.map.addInteraction(modify);
+    // var modify = new Modify({source: this.mapData.source});
+    // this.map.addInteraction(modify);
     
     //选择
     var select = new Select();
-    this.map.addInteraction(select);
-    select.on('select', function(e) {
-      
-      if(e.selected.length > 0){
-        console.log(e.selected[0].values_.gID)
-      }
-    });
+    //this.map.addInteraction(select);
+    this.map.addInteraction(new Select({
+      // 设置选中后的style
+      style: new Style({
+        image: new Icon({
+          size: [30, 30],
+          src: cameraSrc,
+          opacity: 1,
+          scale: 1.2,
+        }),
+        stroke: new Stroke({
+          width: 1,
+          color: [114, 182, 61, 1]
+        }),
+        fill: new Fill({
+          color: [30, 138, 112, 0.6]
+        })
+      })
+    }));
   },
   methods: {
     change(type){
-      this.addDraw(type);
+      this.cleanDrawAction();
+      if(!type || type=="null"){
+        return false;
+      }
+      if(type =="refresh"){
+        this.$parent.refresh();
+      }else{
+        this.addDraw(type);
+      }
     },
     addDraw(typeVal){
       var _this = this;
+      var drawStyle = {
+        image: new CircleStyle(/** @type {module:ol/style/Icon~Options} */ ({
+          radius: 3,
+          fill: new Fill({
+            color: '#FFFF00'
+          })
+        })),
+        stroke:new Stroke({//绘制路径
+          lineDash:[1,2,3,4,5,6],
+          color: [114, 182, 61, 1]
+        }),
+      }
+      if(typeVal == "Point"){
+        drawStyle = {
+          image: new Icon(/** @type {module:ol/style/Icon~Options} */ ({
+            size: [30, 30],
+            src: cameraSrc,
+            opacity: 0.8,
+          })),
+        }
+      }
       this.map.draw = new Draw({
         source: _this.mapData.source,
-        // style:new Style({
-        //   fill:new Fill({
-        //     color:'rgba(255,0,255,.5)'
-        //   }),
-        //   stroke:new Stroke({//绘制路径
-        //     color:'rgba(255,0,255,1)',
-        //     width:3,
-        //   }),
-        //   image:new CircleStyle({//鼠标点的颜色形状
-        //     fill:new Fill({
-        //       color:'rgba(0,198,255,.5)'
-        //     }),
-        //     radius:10
-        //   })
-        // }),
+        style:new Style(drawStyle),
         type: typeVal,
       });
       this.map.addInteraction(this.map.draw);
@@ -165,8 +193,8 @@ export default {
     volLayers(){
       let _this = this;
       var ArrLayer = [];
-	   ////append heatmap layers on map
-      if(hm.layers && hm.layers.length > 0){
+	  
+	  if(hm.layers && hm.layers.length > 0){
         for (var i = 0;i < hm.layers.length; i++)
           ArrLayer.push(hm.layers[i]);
       }
@@ -187,19 +215,13 @@ export default {
         }),
         style: new Style({
           image: new Icon(/** @type {module:ol/style/Icon~Options} */ ({
-            anchor: [0.5, 100],
-            anchorXUnits: 'fraction',
-            anchorYUnits: 'pixels',
-            opacity: 1,
-            rotation:0,
-            rotateWithView:true,
-            scale:0.3,
-            fill:"#14fb24",
-            color:"#14fb24",
+            size: [30, 30],
             src: cameraSrc,
+            opacity: 0.8,
           })),
           stroke: new Stroke({
             width: 1,
+            lineDash:[1,2,3,4,5,6],
             color: [114, 182, 61, .8]
           }),
           fill: new Fill({
@@ -229,8 +251,6 @@ export default {
       //   undefinedHTML: '&nbsp;'
       //   */
       // })
-      
-      console.log(this.volLayers())
       return new Map({
         target: el,
         //loadTilesWhileAnimating: true,

@@ -1,22 +1,28 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <kd-ol-map :edit-geom-enabled="true"></kd-ol-map> 
+    <v-ol-map :edit-geom-enabled="true" :key="id"></v-ol-map>
   </div>
 </template>
 
 <script>
 
-import KdOlMap from '@/components/v-Olmap.vue'
+import VOlMap from '@/components/v-Olmap.vue'
 
 export default {
   name: 'kdmappage',
-  components: {  KdOlMap  },
+  components: {  VOlMap  },
   data(){
     return{
-      msg:"商场平面图"
+      msg:"商场平面图",
+      id: +new Date()
     }
-  }
+  },
+  methods: {
+    refresh: function () {
+      this.id = +new Date()
+    }
+  },
 }
 </script>
 

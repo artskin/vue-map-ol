@@ -21,7 +21,7 @@
       </el-radio-group>
     </div>
     <div ref="volmap" class="volmap">
-      Loading Map...
+      
     </div>
   </div>
 </template>

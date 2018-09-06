@@ -17,6 +17,9 @@
             "geometry": {
               "type": "Point",
               "coordinates":[500.625,679.4531250000001]
+            },
+			"properties": {
+              "number": "7"
             }
           },
           {
@@ -28,6 +31,9 @@
             "geometry": {
               "type": "Point",
               "coordinates": [931.875,424.4531250000001]
+            },
+			"properties": {
+              "number": "3"
             }
           },
           {
@@ -39,6 +45,9 @@
             "geometry": {
               "type": "Point",
               "coordinates":  [1089.375,829.4531250000001]
+            },
+			"properties": {
+              "number": "1"
             }
           },
           {
@@ -48,7 +57,7 @@
               "coordinates": [457.5,475.0781250000001]
             },
             "properties": {
-              "prop0": "value04"
+              "number": "10"
             }
           },
           {
@@ -58,7 +67,7 @@
               "coordinates": [896.25,583.8281250000001]
             },
             "properties": {
-              "prop0": "value05"
+              "number": "5"
             }
           }
         ]

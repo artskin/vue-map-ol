@@ -80,10 +80,23 @@ export default {
     });
     this.mapConf.source = new VectorSource();
     
-    this.map = new Map({
-      target: this.$refs.volmap,
-      layers:this.volLayers(),
-      view: this.volView()
+    this.map = new Map(
+      // {
+      // target: this.$refs.volmap,
+      // layers:this.volLayers(),
+      // view: this.volView()
+      // }
+    );
+
+    new Map({
+      layers: [
+        new TileLayer({source: new OSM()})// 创建一个使用Open Street Map地图源的瓦片图层
+      ],
+      view: new View({     // 设置显示地图的视图
+        center: [0, 0],    // 定义地图显示中心于经度0度，纬度0度处
+        zoom: 2            // 并且定义地图显示层级为2
+      }),
+      target: this.$refs.volmap   
     });
     
     this.selectLayer()

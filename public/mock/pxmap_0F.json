@@ -1,0 +1,278 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+
+        "coordinates": [461.87499999999994, 620]
+      },
+      "properties": {
+        "cameraID": "100002",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [469.0624999999999, 269.3749999999999],
+            [467.8124999999999, 318.7499999999999],
+            [462.1874999999999, 318.7499999999999],
+            [462.8124999999999, 369.3749999999999],
+            [619.6874999999999, 368.7499999999999],
+            [619.6874999999999, 268.7499999999999]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g01",
+        "cameraList": ["02", "03", "06"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [430.6249999999999, 367.49999999999994]
+      },
+      "properties": {
+        "cameraID": "100001",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [361.8749999999999, 316.24999999999994]
+      },
+      "properties": {
+        "cameraID": "100003",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1051.8749999999998, 712.4999999999999]
+      },
+      "properties": {
+        "cameraID": "100004",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [986.8749999999998, 513.75]
+      },
+      "properties": {
+        "cameraID": "100005",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [161.87499999999997, 437.5]
+      },
+      "properties": {
+        "cameraID": "100006",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [899.3749999999999, 523.75]
+      },
+      "properties": {
+        "cameraID": "100007",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [950.6249999999999, 472.49999999999994]
+      },
+      "properties": {
+        "cameraID": "100008",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [834.3749999999999, 462.49999999999994]
+      },
+      "properties": {
+        "cameraID": "100009",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [934.3749999999999, 327.5]
+      },
+      "properties": {
+        "cameraID": "1000010",
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [899.3749999999999, 281.25]
+      },
+      "properties": {
+        "cameraID": "1000011",
+        "rotation": 40,
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [950.6249999999999, 237.5]
+      },
+      "properties": {
+        "cameraID": "1000012",
+        "rotation": 90,
+        "number": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [964.8437499999999, 470],
+            [902.0312499999999, 531.875],
+            [832.3437499999999, 461.5625],
+            [895.7812499999999, 401.875]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g02",
+        "cameraList": [1, 2]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [966.8749999999999, 471.25],
+            [755.6249999999999, 685],
+            [763.1249999999999, 691.25],
+            [762.0312499999999, 796.5625],
+            [1064.6875, 796.2499999999998],
+            [1064.0625, 674.9999999999998],
+            [935.9375, 675.6249999999998],
+            [900.3125, 639.3749999999998],
+            [1017.8124999999998, 522.4999999999999]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g03",
+        "cameraList": [5]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [471.24999999999994, 406.25],
+            [333.74999999999994, 542.5],
+            [192.49999999999997, 399.375],
+            [332.49999999999994, 251.24999999999994]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g04",
+        "cameraList": [7, 8]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [638.7499999999999, 571.2499999999999],
+            [539.9999999999999, 670.6249999999999],
+            [509.3749999999999, 639.9999999999999],
+            [336.87499999999994, 638.7499999999999],
+            [334.99999999999994, 538.1249999999999],
+            [468.7499999999999, 403.125]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g05",
+        "cameraList": [9, 10]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [640.3124999999999, 571.8749999999999],
+            [539.0624999999999, 672.4999999999999],
+            [540.3124999999999, 796.2499999999999],
+            [762.1874999999999, 796.2499999999999],
+            [760.3124999999999, 692.4999999999999]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g06",
+        "cameraList": [11, 12]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [944.5312499999999, 235.31249999999997],
+            [891.4062499999999, 287.81249999999994],
+            [934.2187499999999, 333.74999999999994],
+            [982.6562499999999, 285.93749999999994],
+            [972.3437499999999, 267.18749999999994],
+            [957.0312499999999, 249.06249999999994]
+          ]
+        ]
+      },
+      "properties": {
+        "groupID": "g07",
+        "cameraList": [1, 9, 10]
+      }
+    }
+  ]
+}

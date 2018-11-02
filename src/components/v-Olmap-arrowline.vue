@@ -34,7 +34,7 @@ import al from '../assets/arrowline.js'
 
 //加载静态资源
 import '../assets/style/ol/ol.css'
-import bgImgSrc from '../assets/img/floor2.png'
+import bgImgSrc from '../assets/img/PX-0F.png'
 import cameraSrc from '../assets/img/camera2@2x.svg?v=1'
 var cameraJson = 'https://raw.githubusercontent.com/artskin/vue-map-ol/master/src/assets/data/hm-test.json';
 

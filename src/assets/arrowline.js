@@ -19,8 +19,6 @@ var coordinates = [
 ];
 
 
-
-
 ////
 var features = new Array();
 for (var i = 0; i < coordinates.length; ++i) {

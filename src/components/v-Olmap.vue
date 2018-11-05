@@ -262,8 +262,6 @@ export default {
         })
       }));
     }
-    
-    
   }
 }
 </script>

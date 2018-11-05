@@ -17,6 +17,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/olmap.vue')
     },
     {
+      path: '/map_leaflet',
+      name: 'map_leaflet',
+      component: () => import(/* webpackChunkName: "about" */ './views/map_leaflet.vue')
+    },
+    {
       path: '/arrowline',
       name: 'arrowlinepage',
       // route level code-splitting

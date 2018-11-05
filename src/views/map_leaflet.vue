@@ -327,7 +327,7 @@
 	border: 1px solid #999;
 }
 #map{border: 1px dashed #ccc;height: 600px;}
-.leaflet-div-icon{border-radius: 10px;transform: scale(0.3);background: chocolate;}
+.leaflet-div-icon{border-radius: 10px;transform: scale(0.3);background:rgba(255,204,0,.5);border:1px dotted #ffcc00;}
 
 </style>
 
@@ -392,26 +392,44 @@ export default {
     var drawnItems = new L.FeatureGroup();
     console.log(drawnItems)
     this.map.addLayer(drawnItems);
+
+    var MyCustomMarker = L.Icon.extend({
+      options: {
+        shadowUrl: null,
+        iconAnchor: new L.Point(12, 12),
+        iconSize: new L.Point(24, 40),
+        iconUrl: '/images/marker-icon.png'
+      }
+    });
+
+    var drawPoint = new L.DivIcon({
+      iconSize: new L.Point(8, 8)
+    })
+
     var drawControl = new L.Control.Draw({
       draw : {
-                position : 'topleft',
-                polygon : {
-                    title : 'Draw a sexy polygon!',
-                    allowIntersection : false,
-                    drawError : {
-                      color : '#b00b00',
-                      timeout : 1000
-                    },
-                    shapeOptions : {
-                      color : '#bada55'
-                    },
-                    showArea : true
-                },
-                polyline : false,
-                rectangle : false,
-                circle : false,
-                marker : false
+        position : 'topleft',
+        polygon : {
+            title : 'Draw a sexy polygon!',
+            allowIntersection : false,
+            drawError : {
+              color : '#b00b00',
+              timeout : 1000
             },
+            shapeOptions : {
+              color : '#bada55',
+              weight: 2,
+            },
+            icon: drawPoint,
+            showArea : true
+        },
+        polyline : false,
+        rectangle : false,
+        circle : false,
+        marker: {
+          icon: new MyCustomMarker()
+        }
+      },
       edit: {
         featureGroup: drawnItems
       }

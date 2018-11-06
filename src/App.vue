@@ -47,6 +47,10 @@ body{margin: 0;padding: 0;background-color: #15142b}
                 <el-menu-item index="/arrowline">Arrow Line Map</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
+            <el-menu-item index="/map_leaflet">
+              <i class="el-icon-menu"></i>
+              <span slot="title">Map-Leaflet</span>
+            </el-menu-item>
             <el-menu-item index="/">
               <i class="el-icon-menu"></i>
               <span slot="title">Map-Openlayer</span>

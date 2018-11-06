@@ -108,7 +108,7 @@
 }
 
 .leaflet-draw-actions a {
-	background-color: #919187;
+	background-color: rgba(112,166,155,.6);
 	border-left: 1px solid #AAA;
 	color: #FFF;
 	font: 11px/19px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -140,7 +140,7 @@
 }
 
 .leaflet-draw-actions a:hover {
-	background-color: #A0A098;
+	background-color: rgba(112,166,155,1);
 }
 
 .leaflet-draw-actions-top.leaflet-draw-actions-bottom a {
@@ -326,9 +326,8 @@
 .leaflet-oldie .leaflet-draw-toolbar {
 	border: 1px solid #999;
 }
-#map{border: 1px dashed #ccc;height: 600px;}
-.leaflet-div-icon{border-radius: 10px;transform: scale(0.3);background:rgba(255,204,0,.5);border:1px dotted #ffcc00;}
-
+#map{border: 1px dashed rgba(6,77,41,.5);height: 600px;}
+.leaflet-div-icon{border-radius: 10px;transform: scale(0.3);background:rgba(255,204,0,.6);border:1px dotted rgba(255,204,0,.8);}
 </style>
 
 <template>
@@ -353,16 +352,20 @@
       <l-polyline :lat-lngs="travel"/>
     </l-map>
     </div>
-    
   </div>
 </template>
 
 <script>
-
 import { LMap, LImageOverlay, LMarker, LPopup,LPolyline } from 'vue2-leaflet';
-import 'leaflet-draw';
+ import { AntPath, antPath } from 'leaflet-ant-path';
+//import 'leaflet-draw';
+import 'leaflet.heat';
+require('leaflet-draw');
+import axios from 'axios';
+var store = require('store');
+import DrawLocal from '../assets/drawLocal.js';
 
-console.log(L.Draw)
+var data_geoJson = '/mock/pxmap_0F.json';
 
 export default {
   name: 'leaflet',
@@ -372,9 +375,10 @@ export default {
       msg:"leaflet map",
       id: +new Date(),
       map: null,
-      url: '/images/PX-0F.png',
+      url: '/images/PX-1F.png',
       bounds: [[-540, -960], [1080, 1920]],
       minZoom: -2,
+      maxZoom: 2,
       zoom:-1,
       crs: L.CRS.Simple,
       stars: [
@@ -390,7 +394,7 @@ export default {
     var _this = this;
     this.map = this.$refs.map.mapObject;
     var drawnItems = new L.FeatureGroup();
-    console.log(drawnItems)
+    
     this.map.addLayer(drawnItems);
 
     var MyCustomMarker = L.Icon.extend({
@@ -398,15 +402,16 @@ export default {
         shadowUrl: null,
         iconAnchor: new L.Point(12, 12),
         iconSize: new L.Point(24, 40),
-        iconUrl: '/images/marker-icon.png'
+        iconUrl: '/images/icon-camera.png'
       }
     });
 
     var drawPoint = new L.DivIcon({
       iconSize: new L.Point(8, 8)
-    })
+    });
+    L.drawLocal = DrawLocal.drawSetting;
 
-    var drawControl = new L.Control.Draw({
+    var options = {
       draw : {
         position : 'topleft',
         polygon : {
@@ -433,12 +438,54 @@ export default {
       edit: {
         featureGroup: drawnItems
       }
-    });
+    };
+    var drawControl = new L.Control.Draw(options);
     this.map.addControl(drawControl);
     this.map.on(L.Draw.Event.CREATED, function (event) {
+      var coordsList = event.layer.getLatLngs()[0];
+      var coords=[];
+      console.log(coordsList)
+      for(let i=0;i<coordsList.length;i++){
+        coords.push([coordsList[i].lng,coordsList[i].lat])
+      }
+      console.log(coords);
+      store.set("coords",coords)
       var layer = event.layer;
       drawnItems.addLayer(layer);
     });
+
+    //heatmap
+    var heat = L.heatLayer([
+        [300.5, 200.5, 2000], // lat, lng, intensity
+        [320.6, 300.4, 5000],
+        [400.6, 200.4, 3000],
+        [260.6, 300.4, 800],
+    ], {
+      radius: 30,
+      blur:20,
+      gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+    }).addTo(this.map);
+
+    //渲染方法
+    var myStyle = {
+      "color": "#00f",
+      "weight": 3,
+      "opacity": 0.5,
+    };
+    axios.get('/mock/pxmap_1F.json').then((req)=>{
+      data_geoJson = req.data;
+      //console.log(data_geoJson)
+      var layerGeo = L.geoJSON(data_geoJson, {
+          style:myStyle
+      }).addTo(this.map);
+      layerGeo.on('click',function(e){
+          console.log(e,e.layer.feature.properties.name) //当前点击的物体的名称
+      })
+
+    })
+    
+   
+
   },
   methods: {
     zoomUpdate (zoom) {
@@ -460,5 +507,3 @@ export default {
   },
 }
 </script>
-
-

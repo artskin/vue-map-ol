@@ -153,7 +153,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [564.40276699281, 807.9790985270841]
+        "coordinates": [-550,260.875]
       },
       "properties": {
         "cameraID": "1000",
@@ -165,7 +165,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [100, 300]
+        "coordinates": [-350,832.875]
       },
       "properties": {
         "cameraID": "1001",

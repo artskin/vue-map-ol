@@ -401,7 +401,7 @@ export default {
       options: {
         shadowUrl: null,
         iconAnchor: new L.Point(12, 12),
-        iconSize: new L.Point(24, 40),
+        iconSize: new L.Point(40, 40),
         iconUrl: '/images/icon-camera.png'
       }
     });
@@ -428,7 +428,7 @@ export default {
             icon: drawPoint,
             showArea : true
         },
-        polyline : false,
+        polyline : true,
         rectangle : false,
         circle : false,
         marker: {
@@ -441,17 +441,44 @@ export default {
     };
     var drawControl = new L.Control.Draw(options);
     this.map.addControl(drawControl);
-    this.map.on(L.Draw.Event.CREATED, function (event) {
-      var coordsList = event.layer.getLatLngs()[0];
+    this.map.on(L.Draw.Event.CREATED, function (ev) {
       var coords=[];
-      console.log(coordsList)
-      for(let i=0;i<coordsList.length;i++){
-        coords.push([coordsList[i].lng,coordsList[i].lat])
+      var shaptype = ev.layerType;
+      if(shaptype =="polygon"){
+        coords = ToCoords(ev.layer.getLatLngs()[0])
+      }else if(shaptype =="polyline"){
+        coords = ToCoords(ev.layer.getLatLngs())
+      }else{
+        //coordPoints = ev.layer.getLatLng();
+        coords = L.GeoJSON.latLngToCoords(ev.layer.getLatLng())
       }
-      console.log(coords);
-      store.set("coords",coords)
-      var layer = event.layer;
+
+      function ToCoords(latLngs) {
+        var coords = [];
+        for (var i = 0, len = latLngs.length; i < len; i++) {
+          //coords.push(L.GeoJSON.latLngToCoords(latLngs[i]));
+          coords.push([latLngs[i].lat,latLngs[i].lng]);
+        }
+        return coords;
+      }
+
+      store.set("coords",coords);
+      var layer = ev.layer;
       drawnItems.addLayer(layer);
+
+      console.log(ev,JSON.stringify(coords))
+
+      // switch(ev.layerType){
+      //   case "polygon":
+          
+      //   break;
+      //   case "marker":
+          
+      //   break;
+      //   case "circlemarker":
+      //   break;
+      //   default:
+      // }
     });
 
     //heatmap
@@ -466,7 +493,7 @@ export default {
       gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
     }).addTo(this.map);
 
-    //渲染方法
+    //渲染Jeojson
     var myStyle = {
       "color": "#00f",
       "weight": 3,
@@ -481,8 +508,31 @@ export default {
       layerGeo.on('click',function(e){
           console.log(e,e.layer.feature.properties.name) //当前点击的物体的名称
       })
-
     })
+
+    //轨迹图
+    var antLatlngs = [[233.4375,-562],[248.4375,-506],[237.4375,-457],[199.4375,-415],[145.4375,-384],[39.4375,-338],[-44.5625,-286],[-109.5625,-180],[-124.5625,-92],[-149.5625,-42],[-170.5625,-24]]
+    var antOptions = {delay: -300, dashArray: [10,20], weight: 10, color: "#FF00ea", pulseColor: "#FFFFFF"};
+    
+    
+    
+    // this.map.on("zoomend", function(){
+    //   var zoomLeaval = this.map.getZoom();
+      
+    //   antOptions.delay = 10+100*zoomLeaval
+      
+      
+    //   var animationDuration = 1 + antOptions.delay/3/this.map.getZoom() +"s";
+    //   console.log(this.map.getZoom(),antOptions.delay,animationDuration);
+    //   let antPolyline = new AntPath(antLatlngs, antOptions);
+    // }, this);
+    // Usethe constructor...
+    let antPolyline = new AntPath(antLatlngs, antOptions);
+    
+    // ... or use the factory
+    //antPolyline = antPath(latlngs, options);
+    
+    antPolyline.addTo(this.map);
     
    
 

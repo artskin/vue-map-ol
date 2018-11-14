@@ -1,0 +1,483 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [643.59375, 182.9443359375],
+            [1521.09375, 181.0693359375],
+            [1521.09375, 555.1318359375],
+            [1344.84375, 555.1318359375],
+            [1344.84375, 336.6943359375],
+            [642.65625, 337.6318359375],
+            [643.59375, 182.9443359375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "18",
+        "name": "L1-Entrance",
+        "cameraList": ["1023"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1703.7890625, 822.454833984375],
+            [1856.6015625, 822.6892089843749],
+            [1857.0703125, 458.704833984375],
+            [1811.1328124999998, 350.892333984375],
+            [1734.7265624999998, 263.704833984375],
+            [1634.4140625, 204.876708984375],
+            [1524.9609375, 181.907958984375],
+            [1523.3203125, 760.345458984375],
+            [1703.5546875, 760.345458984375],
+            [1703.7890625, 822.454833984375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "17",
+        "name": "N1-04",
+        "cameraList": ["1024"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1344.140625, 760.37841796875],
+            [1344.609375, 557.87841796875],
+            [1524.140625, 557.87841796875],
+            [1523.671875, 760.37841796875],
+            [1344.140625, 760.37841796875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "16",
+        "name": "N1-04 Lounge",
+        "cameraList": ["1025"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1099.453125, 553.65966796875],
+            [1099.453125, 362.87841796875],
+            [1339.453125, 363.34716796875],
+            [1339.453125, 553.19091796875],
+            [1099.453125, 553.65966796875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "15",
+        "name": "N1-03",
+        "cameraList": ["1014"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [907.265625, 553.65966796875],
+            [907.265625, 363.34716796875],
+            [1095.703125, 363.81591796875],
+            [1095.703125, 553.65966796875],
+            [907.265625, 553.65966796875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "14",
+        "name": "N1-02",
+        "cameraList": ["1011", "1012", "1013"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [663.984375, 553.65966796875],
+            [664.453125, 363.81591796875],
+            [903.515625, 363.81591796875],
+            [903.046875, 553.65966796875],
+            [663.984375, 553.65966796875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "13",
+        "name": "N1-01",
+        "cameraList": ["1008", "1009", "1010"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[-684,-209.125],[-866,-211.125],[-866,-167.125],[-776,0.875],[-682,-51.125]]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "areaID": "12",
+        "name": "Node 1 Onbording #1",
+        "cameraList": ["1001", "1002", "1003", "1004", "1005"]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-550,260.875]
+      },
+      "properties": {
+        "cameraID": "1000",
+        "number": "30",
+        "rotation": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-350,832.875]
+      },
+      "properties": {
+        "cameraID": "1001",
+        "number": "39",
+        "rotation": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [160, 400]
+      },
+      "properties": {
+        "cameraID": "1002",
+        "number": "",
+        "rotation": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [220, 500]
+      },
+      "properties": {
+        "cameraID": "1003",
+        "number": "28",
+        "rotation": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [280, 600]
+      },
+      "properties": {
+        "cameraID": "1004",
+        "number": "",
+        "rotation": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [340, 700]
+      },
+      "properties": {
+        "cameraID": "1005",
+        "number": "11",
+        "rotation": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [420, 800]
+      },
+      "properties": {
+        "cameraID": "1006",
+        "number": "",
+        "rotation": 120
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [650, 550]
+      },
+      "properties": {
+        "cameraID": "1007",
+        "number": "",
+        "rotation": 3.5
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [680, 550]
+      },
+      "properties": {
+        "cameraID": "1008",
+        "number": "45",
+        "rotation": 1.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [780, 550]
+      },
+      "properties": {
+        "cameraID": "1009",
+        "number": "",
+        "rotation": 2.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [850, 550]
+      },
+      "properties": {
+        "cameraID": "1010",
+        "number": "",
+        "rotation": 1.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [950, 550]
+      },
+      "properties": {
+        "cameraID": "1011",
+        "number": "28",
+        "rotation": 2.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1000, 550]
+      },
+      "properties": {
+        "cameraID": "1012",
+        "number": "",
+        "rotation": 1.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1050, 550]
+      },
+      "properties": {
+        "cameraID": "1013",
+        "number": "59",
+        "rotation": 2.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1150, 550]
+      },
+      "properties": {
+        "cameraID": "1014",
+        "number": "",
+        "rotation": 1.2
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [650, 500]
+      },
+      "properties": {
+        "cameraID": "1015",
+        "number": "17",
+        "rotation": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [650, 400]
+      },
+      "properties": {
+        "cameraID": "1016",
+        "number": "",
+        "rotation": 3
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [680, 320]
+      },
+      "properties": {
+        "cameraID": "1017",
+        "number": "10",
+        "rotation": -0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [880, 320]
+      },
+      "properties": {
+        "cameraID": "1018",
+        "number": "24",
+        "rotation": 2.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1080, 320]
+      },
+      "properties": {
+        "cameraID": "1019",
+        "number": "15",
+        "rotation": 1.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1280, 350]
+      },
+      "properties": {
+        "cameraID": "1020",
+        "number": "22",
+        "rotation": 1.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1350, 350]
+      },
+      "properties": {
+        "cameraID": "1021",
+        "number": "",
+        "rotation": 2.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1350, 450]
+      },
+      "properties": {
+        "cameraID": "1022",
+        "number": "1",
+        "rotation": 0.9
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1400, 250]
+      },
+      "properties": {
+        "cameraID": "1023",
+        "number": "9",
+        "rotation": -1.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1550, 250]
+      },
+      "properties": {
+        "cameraID": "1024",
+        "number": "2",
+        "rotation": -1.57
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1400, 750]
+      },
+      "properties": {
+        "cameraID": "1025",
+        "number": "4",
+        "rotation": 1.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1700, 750]
+      },
+      "properties": {
+        "cameraID": "1026",
+        "number": "7",
+        "rotation": 1.68
+      }
+    }
+  ]
+}

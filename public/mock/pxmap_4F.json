@@ -1,0 +1,296 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [285, 1024.8193359375],
+            [285.9375, 690.1318359375],
+            [628.125, 689.1943359375],
+            [626.25, 1025.7568359375],
+            [285, 1024.8193359375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1001",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [286.875, 545.7568359375],
+            [286.875, 359.1943359375],
+            [576.5625, 358.2568359375],
+            [574.6875, 544.8193359375],
+            [286.875, 545.7568359375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1002",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [286.875, 252.3193359375],
+            [285.9375, 38.5693359375],
+            [582.1875, 38.5693359375],
+            [579.375, 254.1943359375],
+            [286.875, 252.3193359375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1003",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [757.5, 917.138671875],
+            [757.5, 705.263671875],
+            [1245, 705.263671875],
+            [1241.25, 920.888671875],
+            [757.5, 917.138671875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1004",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1563.75, 619.013671875],
+            [1365, 617.138671875],
+            [1353.75, 926.513671875],
+            [1563.75, 926.513671875],
+            [1563.75, 619.013671875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1006",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1561.875, 559.013671875],
+            [1561.875, 403.388671875],
+            [1372.5, 401.513671875],
+            [1370.625, 557.138671875],
+            [1561.875, 559.013671875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1007",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1563.75, 43.388671875],
+            [1561.875, 311.513671875],
+            [1368.75, 309.638671875],
+            [1370.625, 39.638671875],
+            [1563.75, 43.388671875]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1008",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [1005, 607.6318359375],
+            [941.25, 601.0693359375],
+            [872.8125, 574.8193359375],
+            [826.875, 538.2568359375],
+            [792.1875, 499.8193359375],
+            [758.4375, 439.8193359375],
+            [739.6875, 360.1318359375],
+            [746.25, 290.7568359375],
+            [760.3125, 242.0068359375],
+            [792.1875, 188.5693359375],
+            [830.625, 148.2568359375],
+            [875.625, 115.4443359375],
+            [928.125, 93.8818359375],
+            [998.4375, 83.5693359375],
+            [1080, 93.8818359375],
+            [1148.4375, 124.8193359375],
+            [1195.3125, 165.1318359375],
+            [1231.875, 212.9443359375],
+            [1251.5625, 250.4443359375],
+            [1265.625, 301.0693359375],
+            [1268.4375, 363.8818359375],
+            [1259.0625, 416.3818359375],
+            [1240.3125, 466.0693359375],
+            [1208.4375, 512.0068359375],
+            [1163.4375, 557.0068359375],
+            [1108.125, 587.0068359375],
+            [1062.1875, 602.9443359375],
+            [1005, 607.6318359375]
+          ]
+        ]
+      },
+      "properties": {
+        "type": "Area",
+        "AreaID": "1005",
+        "name": "Node 1 Onbording"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [283.125, 945.263671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200001",
+        "rotation": -3.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [626.25, 945.263671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200002",
+        "rotation": 0.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [283.125, 223.388671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200003",
+        "rotation": -3.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [571.875, 217.763671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200004",
+        "rotation": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1158.75, 714.638671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200005",
+        "rotation": 0.2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1462.5, 1027.763671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200006",
+        "rotation": 8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [748.125, 448.388671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200007",
+        "rotation": -3.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1145.625, 574.013671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200008",
+        "rotation": 8.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1278.75, 290.888671875]
+      },
+      "properties": {
+        "type": "Point",
+        "cameraID": "200009",
+        "rotation": 0.1
+      }
+    }
+  ]
+}

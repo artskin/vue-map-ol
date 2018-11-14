@@ -139,7 +139,15 @@
       "geometry": {
         "type": "Polygon",
         "coordinates": [
-          [[-684,-209.125],[-866,-211.125],[-866,-167.125],[-776,0.875],[-682,-51.125]]
+          [
+            [626.953125, 222.72216796875],
+            [630.703125, 809.12841796875],
+            [430.078125, 810.06591796875],
+            [162.890625, 338.97216796875],
+            [186.328125, 323.50341796875],
+            [185.859375, 222.72216796875],
+            [626.953125, 222.72216796875]
+          ]
         ]
       },
       "properties": {
@@ -153,7 +161,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-550,260.875]
+        "coordinates": [564.40276699281, 807.9790985270841]
       },
       "properties": {
         "cameraID": "1000",
@@ -165,7 +173,7 @@
       "type": "Feature",
       "geometry": {
         "type": "Point",
-        "coordinates": [-350,832.875]
+        "coordinates": [100, 300]
       },
       "properties": {
         "cameraID": "1001",
@@ -477,6 +485,76 @@
         "cameraID": "1026",
         "number": "7",
         "rotation": 1.68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [425.6249999999998,472.7636718749999]
+      },
+      "properties": {
+        "textID": "12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [779.9999999999997,454.0136718749999]
+      },
+      "properties": {
+        "textID": "13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [997.4999999999997,459.6386718749999]
+      },
+      "properties": {
+        "textID": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1216.8749999999998,455.8886718749999]
+      },
+      "properties": {
+        "textID": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1432.4999999999998,664.0136718749998]
+      },
+      "properties": {
+        "textID": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1685.6249999999998,572.1386718749999]
+      },
+      "properties": {
+        "textID": "17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1139.9999999999998,266.5136718749999]
+      },
+      "properties": {
+        "textID": "18"
       }
     }
   ]
